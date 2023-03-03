@@ -7,6 +7,12 @@ using {
 
 entity CRFHeaderFields : managed {
 Directorate: String;
+Contract_Holder: String;
+Contract_Title: String;
+Contractor_Name: String;
+Contract_Number: Integer;
+Request_Date:Date;
+Contract_Strategy: String;
 
     
 }
