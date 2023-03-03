@@ -14,7 +14,7 @@ Directorate: String;
 entity CompanyEstimatesHeaderItems: managed {
 ItemNo : String;
 ItemCategory:String;
-MaterialDesc:String;
+MaterialDesc:String(2);
 }
 
 entity CompanyEstimatesItemDetails: managed {
