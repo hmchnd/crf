@@ -6,15 +6,88 @@ using {
 
 
 entity CRFHeaderFields : managed {
-Directorate: String;
-Contract_Holder: String;
-Contract_Title: String;
-Contractor_Name: String;
-Contract_Number: Integer;
-Request_Date:Date;
-Contract_Strategy: String;
-
-    
+    @title : 'Directorate'
+    Directorate: String;
+    @title : 'Contract Holder'
+    Contract_Holder: String;
+    @title : 'Contract Title'
+    Contract_Title: String;
+    @title : 'Contractor Name'
+    Contractor_Name: String;
+    @title : 'Contract Number'
+    Contract_Number: String;
+    @title : 'Request_Date'
+    Request_Date: Date;
+    @title : 'Contract Strategy'
+    Contract_Strategy: String;
+    @title : 'Contract Currency'
+    Contract_Currency: String(3);
+    @title : 'Exchange Rate Date'
+    Exchng_Rate_Date: Date;
+    @title : 'Exchange Rate Contract Currecny'
+    Exchng_Rate_Cont_Curr: String(3);
+    @title : 'Estimated Contract Value (In Contract Currency)'
+    Est_Cont_Value: Decimal;
+    @title : 'Estimated Contract Value in USD'
+    Est_Cont_Value_USD: Decimal;
+    @title : 'Estimated Contigency (In Contract Currency)'
+    Est_Contigency: Decimal;
+    @title : 'Cost Object (WBS/WBSE, Cost Center)'
+    Cost_Object: String;
+    @title : 'Estimated Local Content %'
+    Est_Local_Content: Decimal;
+    @title : 'LTPO Number'
+    LTPO_No: String;
+    @title : 'Forecast Contract Duration'
+    Forecast_Contract_Duration: String;
+    @title : 'Planned Start Date'
+    Planned_Start_Date: Date;
+    @title : 'Planned End Date'
+    Planned_End_Date: Date;
+    @title : 'Optional Extension'
+    Optional_Extension: String;
+    @title : 'Retrospective'
+    Retrospective: String;
+    @title : 'Description of Work, Service & Material'
+    Description_WSM: String;
+    @title : 'Optional Scope'
+    Optional_Scope: String;
+    @title : 'Government Intermediary Scope'
+    Gov_Inter_Scope: String;
+    @title : 'Risks, Constrains and Sensitivities'
+    RCS: String;
+    @title : 'HSSE Risk'
+    HSSE_Risk: String;
+    @title : 'HSSE ME Influence'
+    HSSE_ME_Influence: String;
+    @title : 'HSSE Category Justification'
+    HSSE_Cat_Justification: String;
+    @title : 'Competitve Tender'
+    Competitive_Tender: Boolean;
+    @title : 'Single/Sole Source'
+    Source: Boolean;
+    @title : 'TEP(Scoring Matrix)'
+    TEP: Boolean;
+    @title : 'Technical Evaluation Questions'
+    TEQ: Boolean;
+    @title : 'Technical Evaluation Not Applicable'
+    TE_NA: Boolean;
+    @title : 'Source Justification'
+    Source_Justification: String;
+    @title : 'Detailed Explanation of Single/Source Justification'
+    Detail_Expln_Sourc_Just: String;
+    @title : 'Other Contracting Options Considered'
+    Other_Cont_Optn_Considered: String;
+    @title : 'Details of other NCOC Contracts Awarded To Contractor'
+    Detail_NCOC_Contract_Award: String;
+    @title : 'Performance Of Contractor under NCOC Contracts'
+    Perf_Contractor_NCOC_Cont: String;
+    @title : 'Consequences of non-approval by NCOC N.V. respective Contracts Board'
+    Consq_Non_App_NCOC_Contract_Board: String;
+    @title : 'Commodity Code'
+    Commodity_Code: String;
+    @title : 'Prequalification Status'
+    Prequalification_Status: String;
 }
 
 entity CompanyEstimatesHeaderItems: managed {
