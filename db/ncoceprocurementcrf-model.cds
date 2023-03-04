@@ -15,7 +15,7 @@ entity CRFHeaderFields : managed {
     @title : 'Contractor Name'
     Contractor_Name: String;
     @title : 'Contract Number'
-    Contract_Number: String;
+    key Contract_Number: String;
     @title : 'Request_Date'
     Request_Date: Date;
     @title : 'Contract Strategy'
