@@ -91,28 +91,50 @@ entity CRFHeaderFields : managed {
 }
 
 entity CompanyEstimatesHeaderItems: managed {
+    @title : 'Item Group'
+    @description : 'It will group the diffrent description based on numbers'
     key Item_Group: String;
-ItemNo : String;
-ItemCategory: String;
-MaterialID: String;
-Description: String;
-UoM: String(3);
-Total_Price: String;
-Currecy: String(3);
-Mat_Group: String;
-Plant: String;
-Storage_Loc: String;
-Item_Details: Composition of many CompanyEstimatesItemDetails on Item_Group = Item_Group
+    @title : 'Item Title'
+    ItemNo : String;
+    @title : 'Item Category'
+    Item_Category: String;
+    @title : 'Material ID'
+    MaterialID: String;
+    @title : 'Description'
+    Description: String;
+    @title : 'Unit of Measurement'
+    UoM: String(3);
+    @title : 'Total Price'
+    Total_Price: String;
+    @title : 'Currency'
+    Currecy: String(3);
+    @title : 'Material Group'
+    Mat_Group: String;
+    @title : 'Plant'
+    Plant: String;
+    @title : 'Storage Location'
+    Storage_Loc: String;
+    @title : 'Item Details Line Item'
+    @description : 'It will fetch the Line Item Details based on Item Group'
+    Item_Details: Composition of many CompanyEstimatesItemDetails on Item_Group = Item_Group
 }
 
 entity CompanyEstimatesItemDetails: managed { 
-key Item_Group : Association to CompanyEstimatesHeaderItems;    
-Line_Item: String;    
-ServiceNo: String;
-Short_Text: String;
-UoM: String(3);
-Unit_Price: String;
-Currecny: String(3);
-Total: String;
+    @title : 'Item Group'
+    key Item_Group : Association to CompanyEstimatesHeaderItems;
+    @title : 'Line Item No'
+    Line_Item: String;
+    @title : 'Service No'
+    ServiceNo: String;
+    @title : 'Short Text'
+    Short_Text: String;
+    @title : 'Unit of Measurement'
+    UoM: String(3);
+    @title : 'Unit Price'
+    Unit_Price: String;
+    @title : 'Currency'
+    Currecny: String(3);
+    @title : 'Total'
+    Total: String;
 
 }
