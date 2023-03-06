@@ -91,12 +91,28 @@ entity CRFHeaderFields : managed {
 }
 
 entity CompanyEstimatesHeaderItems: managed {
+    key Item_Group: String;
 ItemNo : String;
-ItemCategory:String;
-MaterialDesc:String(2);
+ItemCategory: String;
+MaterialID: String;
+Description: String;
+UoM: String(3);
+Total_Price: String;
+Currecy: String(3);
+Mat_Group: String;
+Plant: String;
+Storage_Loc: String;
+Item_Details: Composition of many CompanyEstimatesItemDetails on Item_Group = Item_Group
 }
 
-entity CompanyEstimatesItemDetails: managed {
-ServiceNo:String;
+entity CompanyEstimatesItemDetails: managed { 
+key Item_Group : Association to CompanyEstimatesHeaderItems;    
+Line_Item: String;    
+ServiceNo: String;
+Short_Text: String;
+UoM: String(3);
+Unit_Price: String;
+Currecny: String(3);
+Total: String;
 
 }
