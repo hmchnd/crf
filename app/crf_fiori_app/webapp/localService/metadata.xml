@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="CRFANDESTIMATEService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="CRFHeaderFields" EntityType="CRFANDESTIMATEService.CRFHeaderFields"/>
+                <EntitySet Name="CompanyEstimatesHeaderItems" EntityType="CRFANDESTIMATEService.CompanyEstimatesHeaderItems">
+                    <NavigationPropertyBinding Path="Item_Details" Target="CompanyEstimatesItemDetails"/>
+                </EntitySet>
+                <EntitySet Name="CompanyEstimatesItemDetails" EntityType="CRFANDESTIMATEService.CompanyEstimatesItemDetails">
+                    <NavigationPropertyBinding Path="Item_Group" Target="CompanyEstimatesHeaderItems"/>
+                </EntitySet>
+            </EntityContainer>
+            <EntityType Name="CRFHeaderFields">
+                <Key>
+                    <PropertyRef Name="Contract_Number"/>
+                </Key>
+                <Property Name="createdAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="createdBy" Type="Edm.String" MaxLength="255"/>
+                <Property Name="modifiedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="modifiedBy" Type="Edm.String" MaxLength="255"/>
+                <Property Name="Directorate" Type="Edm.String"/>
+                <Property Name="Contract_Holder" Type="Edm.String"/>
+                <Property Name="Contract_Title" Type="Edm.String"/>
+                <Property Name="Contractor_Name" Type="Edm.String"/>
+                <Property Name="Contract_Number" Type="Edm.String" Nullable="false"/>
+                <Property Name="Request_Date" Type="Edm.Date"/>
+                <Property Name="Contract_Strategy" Type="Edm.String"/>
+                <Property Name="Contract_Currency" Type="Edm.String" MaxLength="3"/>
+                <Property Name="Exchng_Rate_Date" Type="Edm.Date"/>
+                <Property Name="Exchng_Rate_Cont_Curr" Type="Edm.String" MaxLength="3"/>
+                <Property Name="Est_Cont_Value" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="Est_Cont_Value_USD" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="Est_Contigency" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="Cost_Object" Type="Edm.String"/>
+                <Property Name="Est_Local_Content" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="LTPO_No" Type="Edm.String"/>
+                <Property Name="Forecast_Contract_Duration" Type="Edm.String"/>
+                <Property Name="Planned_Start_Date" Type="Edm.Date"/>
+                <Property Name="Planned_End_Date" Type="Edm.Date"/>
+                <Property Name="Optional_Extension" Type="Edm.String"/>
+                <Property Name="Retrospective" Type="Edm.String"/>
+                <Property Name="Description_WSM" Type="Edm.String"/>
+                <Property Name="Optional_Scope" Type="Edm.String"/>
+                <Property Name="Gov_Inter_Scope" Type="Edm.String"/>
+                <Property Name="RCS" Type="Edm.String"/>
+                <Property Name="HSSE_Risk" Type="Edm.String"/>
+                <Property Name="HSSE_ME_Influence" Type="Edm.String"/>
+                <Property Name="HSSE_Cat_Justification" Type="Edm.String"/>
+                <Property Name="Competitive_Tender" Type="Edm.Boolean"/>
+                <Property Name="Source" Type="Edm.Boolean"/>
+                <Property Name="TEP" Type="Edm.Boolean"/>
+                <Property Name="TEQ" Type="Edm.Boolean"/>
+                <Property Name="TE_NA" Type="Edm.Boolean"/>
+                <Property Name="Source_Justification" Type="Edm.String"/>
+                <Property Name="Detail_Expln_Sourc_Just" Type="Edm.String"/>
+                <Property Name="Other_Cont_Optn_Considered" Type="Edm.String"/>
+                <Property Name="Detail_NCOC_Contract_Award" Type="Edm.String"/>
+                <Property Name="Perf_Contractor_NCOC_Cont" Type="Edm.String"/>
+                <Property Name="Consq_Non_App_NCOC_Contract_Board" Type="Edm.String"/>
+                <Property Name="Commodity_Code" Type="Edm.String"/>
+                <Property Name="Prequalification_Status" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="CompanyEstimatesHeaderItems">
+                <Key>
+                    <PropertyRef Name="Item_Group"/>
+                </Key>
+                <Property Name="createdAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="createdBy" Type="Edm.String" MaxLength="255"/>
+                <Property Name="modifiedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="modifiedBy" Type="Edm.String" MaxLength="255"/>
+                <Property Name="Item_Group" Type="Edm.String" Nullable="false"/>
+                <Property Name="ItemNo" Type="Edm.String"/>
+                <Property Name="Item_Category" Type="Edm.String"/>
+                <Property Name="MaterialID" Type="Edm.String"/>
+                <Property Name="Description" Type="Edm.String"/>
+                <Property Name="UoM" Type="Edm.String" MaxLength="3"/>
+                <Property Name="Total_Price" Type="Edm.String"/>
+                <Property Name="Currecy" Type="Edm.String" MaxLength="3"/>
+                <Property Name="Mat_Group" Type="Edm.String"/>
+                <Property Name="Plant" Type="Edm.String"/>
+                <Property Name="Storage_Loc" Type="Edm.String"/>
+                <NavigationProperty Name="Item_Details" Type="Collection(CRFANDESTIMATEService.CompanyEstimatesItemDetails)">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="CompanyEstimatesItemDetails">
+                <Key>
+                    <PropertyRef Name="Item_Group_Item_Group"/>
+                </Key>
+                <Property Name="createdAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="createdBy" Type="Edm.String" MaxLength="255"/>
+                <Property Name="modifiedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="modifiedBy" Type="Edm.String" MaxLength="255"/>
+                <NavigationProperty Name="Item_Group" Type="CRFANDESTIMATEService.CompanyEstimatesHeaderItems">
+                    <ReferentialConstraint Property="Item_Group_Item_Group" ReferencedProperty="Item_Group"/>
+                </NavigationProperty>
+                <Property Name="Item_Group_Item_Group" Type="Edm.String" Nullable="false"/>
+                <Property Name="Line_Item" Type="Edm.String"/>
+                <Property Name="ServiceNo" Type="Edm.String"/>
+                <Property Name="Short_Text" Type="Edm.String"/>
+                <Property Name="UoM" Type="Edm.String" MaxLength="3"/>
+                <Property Name="Unit_Price" Type="Edm.String"/>
+                <Property Name="Currecny" Type="Edm.String" MaxLength="3"/>
+                <Property Name="Total" Type="Edm.String"/>
+            </EntityType>
+            <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/createdAt">
+                <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Core.Immutable" Bool="true"/>
+                <Annotation Term="Core.Computed" Bool="true"/>
+                <Annotation Term="Common.Label" String="{i18n>CreatedAt}"/>
+                </Annotations>
+                <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/createdBy">
+                    <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                    <Annotation Term="Core.Immutable" Bool="true"/>
+                    <Annotation Term="Core.Computed" Bool="true"/>
+                    <Annotation Term="Core.Description" String="{i18n>UserID.Description}"/>
+                        <Annotation Term="Common.Label" String="{i18n>CreatedBy}"/>
+                        </Annotations>
+                        <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/modifiedAt">
+                            <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                            <Annotation Term="Core.Computed" Bool="true"/>
+                            <Annotation Term="Common.Label" String="{i18n>ChangedAt}"/>
+                            </Annotations>
+                            <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/modifiedBy">
+                                <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                                <Annotation Term="Core.Computed" Bool="true"/>
+                                <Annotation Term="Core.Description" String="{i18n>UserID.Description}"/>
+                                    <Annotation Term="Common.Label" String="{i18n>ChangedBy}"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Directorate">
+                                        <Annotation Term="Common.Label" String="Directorate"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Contract_Holder">
+                                        <Annotation Term="Common.Label" String="Contract Holder"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Contract_Title">
+                                        <Annotation Term="Common.Label" String="Contract Title"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Contractor_Name">
+                                        <Annotation Term="Common.Label" String="Contractor Name"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Contract_Number">
+                                        <Annotation Term="Common.Label" String="Contract Number"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Request_Date">
+                                        <Annotation Term="Common.Label" String="Request_Date"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Contract_Strategy">
+                                        <Annotation Term="Common.Label" String="Contract Strategy"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Contract_Currency">
+                                        <Annotation Term="Common.Label" String="Contract Currency"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Exchng_Rate_Date">
+                                        <Annotation Term="Common.Label" String="Exchange Rate Date"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Exchng_Rate_Cont_Curr">
+                                        <Annotation Term="Common.Label" String="Exchange Rate Contract Currecny"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Est_Cont_Value">
+                                        <Annotation Term="Common.Label" String="Estimated Contract Value (In Contract Currency)"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Est_Cont_Value_USD">
+                                        <Annotation Term="Common.Label" String="Estimated Contract Value in USD"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Est_Contigency">
+                                        <Annotation Term="Common.Label" String="Estimated Contigency (In Contract Currency)"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Cost_Object">
+                                        <Annotation Term="Common.Label" String="Cost Object (WBS/WBSE, Cost Center)"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Est_Local_Content">
+                                        <Annotation Term="Common.Label" String="Estimated Local Content %"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/LTPO_No">
+                                        <Annotation Term="Common.Label" String="LTPO Number"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Forecast_Contract_Duration">
+                                        <Annotation Term="Common.Label" String="Forecast Contract Duration"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Planned_Start_Date">
+                                        <Annotation Term="Common.Label" String="Planned Start Date"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Planned_End_Date">
+                                        <Annotation Term="Common.Label" String="Planned End Date"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Optional_Extension">
+                                        <Annotation Term="Common.Label" String="Optional Extension"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Retrospective">
+                                        <Annotation Term="Common.Label" String="Retrospective"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Description_WSM">
+                                        <Annotation Term="Common.Label" String="Description of Work, Service &amp; Material"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Optional_Scope">
+                                        <Annotation Term="Common.Label" String="Optional Scope"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Gov_Inter_Scope">
+                                        <Annotation Term="Common.Label" String="Government Intermediary Scope"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/RCS">
+                                        <Annotation Term="Common.Label" String="Risks, Constrains and Sensitivities"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/HSSE_Risk">
+                                        <Annotation Term="Common.Label" String="HSSE Risk"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/HSSE_ME_Influence">
+                                        <Annotation Term="Common.Label" String="HSSE ME Influence"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/HSSE_Cat_Justification">
+                                        <Annotation Term="Common.Label" String="HSSE Category Justification"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Competitive_Tender">
+                                        <Annotation Term="Common.Label" String="Competitve Tender"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Source">
+                                        <Annotation Term="Common.Label" String="Single/Sole Source"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/TEP">
+                                        <Annotation Term="Common.Label" String="TEP(Scoring Matrix)"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/TEQ">
+                                        <Annotation Term="Common.Label" String="Technical Evaluation Questions"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/TE_NA">
+                                        <Annotation Term="Common.Label" String="Technical Evaluation Not Applicable"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Source_Justification">
+                                        <Annotation Term="Common.Label" String="Source Justification"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Detail_Expln_Sourc_Just">
+                                        <Annotation Term="Common.Label" String="Detailed Explanation of Single/Source Justification"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Other_Cont_Optn_Considered">
+                                        <Annotation Term="Common.Label" String="Other Contracting Options Considered"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Detail_NCOC_Contract_Award">
+                                        <Annotation Term="Common.Label" String="Details of other NCOC Contracts Awarded To Contractor"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Perf_Contractor_NCOC_Cont">
+                                        <Annotation Term="Common.Label" String="Performance Of Contractor under NCOC Contracts"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Consq_Non_App_NCOC_Contract_Board">
+                                        <Annotation Term="Common.Label" String="Consequences of non-approval by NCOC N.V. respective Contracts Board"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Commodity_Code">
+                                        <Annotation Term="Common.Label" String="Commodity Code"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CRFHeaderFields/Prequalification_Status">
+                                        <Annotation Term="Common.Label" String="Prequalification Status"/>
+                                    </Annotations>
+                                    <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesHeaderItems/createdAt">
+                                        <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                                        <Annotation Term="Core.Immutable" Bool="true"/>
+                                        <Annotation Term="Core.Computed" Bool="true"/>
+                                        <Annotation Term="Common.Label" String="{i18n>CreatedAt}"/>
+                                        </Annotations>
+                                        <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesHeaderItems/createdBy">
+                                            <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                                            <Annotation Term="Core.Immutable" Bool="true"/>
+                                            <Annotation Term="Core.Computed" Bool="true"/>
+                                            <Annotation Term="Core.Description" String="{i18n>UserID.Description}"/>
+                                                <Annotation Term="Common.Label" String="{i18n>CreatedBy}"/>
+                                                </Annotations>
+                                                <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesHeaderItems/modifiedAt">
+                                                    <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                                                    <Annotation Term="Core.Computed" Bool="true"/>
+                                                    <Annotation Term="Common.Label" String="{i18n>ChangedAt}"/>
+                                                    </Annotations>
+                                                    <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesHeaderItems/modifiedBy">
+                                                        <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                                                        <Annotation Term="Core.Computed" Bool="true"/>
+                                                        <Annotation Term="Core.Description" String="{i18n>UserID.Description}"/>
+                                                            <Annotation Term="Common.Label" String="{i18n>ChangedBy}"/>
+                                                            </Annotations>
+                                                            <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesHeaderItems/Item_Group">
+                                                                <Annotation Term="Common.Label" String="Item Group"/>
+                                                                <Annotation Term="Core.Description" String="It will group the diffrent description based on numbers"/>
+                                                            </Annotations>
+                                                            <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesHeaderItems/ItemNo">
+                                                                <Annotation Term="Common.Label" String="Item Title"/>
+                                                            </Annotations>
+                                                            <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesHeaderItems/Item_Category">
+                                                                <Annotation Term="Common.Label" String="Item Category"/>
+                                                            </Annotations>
+                                                            <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesHeaderItems/MaterialID">
+                                                                <Annotation Term="Common.Label" String="Material ID"/>
+                                                            </Annotations>
+                                                            <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesHeaderItems/Description">
+                                                                <Annotation Term="Common.Label" String="Description"/>
+                                                            </Annotations>
+                                                            <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesHeaderItems/UoM">
+                                                                <Annotation Term="Common.Label" String="Unit of Measurement"/>
+                                                            </Annotations>
+                                                            <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesHeaderItems/Total_Price">
+                                                                <Annotation Term="Common.Label" String="Total Price"/>
+                                                            </Annotations>
+                                                            <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesHeaderItems/Currecy">
+                                                                <Annotation Term="Common.Label" String="Currency"/>
+                                                            </Annotations>
+                                                            <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesHeaderItems/Mat_Group">
+                                                                <Annotation Term="Common.Label" String="Material Group"/>
+                                                            </Annotations>
+                                                            <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesHeaderItems/Plant">
+                                                                <Annotation Term="Common.Label" String="Plant"/>
+                                                            </Annotations>
+                                                            <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesHeaderItems/Storage_Loc">
+                                                                <Annotation Term="Common.Label" String="Storage Location"/>
+                                                            </Annotations>
+                                                            <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesHeaderItems/Item_Details">
+                                                                <Annotation Term="Common.Label" String="Item Details Line Item"/>
+                                                                <Annotation Term="Core.Description" String="It will fetch the Line Item Details based on Item Group"/>
+                                                            </Annotations>
+                                                            <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesItemDetails/createdAt">
+                                                                <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                                                                <Annotation Term="Core.Immutable" Bool="true"/>
+                                                                <Annotation Term="Core.Computed" Bool="true"/>
+                                                                <Annotation Term="Common.Label" String="{i18n>CreatedAt}"/>
+                                                                </Annotations>
+                                                                <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesItemDetails/createdBy">
+                                                                    <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                                                                    <Annotation Term="Core.Immutable" Bool="true"/>
+                                                                    <Annotation Term="Core.Computed" Bool="true"/>
+                                                                    <Annotation Term="Core.Description" String="{i18n>UserID.Description}"/>
+                                                                        <Annotation Term="Common.Label" String="{i18n>CreatedBy}"/>
+                                                                        </Annotations>
+                                                                        <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesItemDetails/modifiedAt">
+                                                                            <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                                                                            <Annotation Term="Core.Computed" Bool="true"/>
+                                                                            <Annotation Term="Common.Label" String="{i18n>ChangedAt}"/>
+                                                                            </Annotations>
+                                                                            <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesItemDetails/modifiedBy">
+                                                                                <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                                                                                <Annotation Term="Core.Computed" Bool="true"/>
+                                                                                <Annotation Term="Core.Description" String="{i18n>UserID.Description}"/>
+                                                                                    <Annotation Term="Common.Label" String="{i18n>ChangedBy}"/>
+                                                                                    </Annotations>
+                                                                                    <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesItemDetails/Item_Group">
+                                                                                        <Annotation Term="Common.Label" String="Item Group"/>
+                                                                                    </Annotations>
+                                                                                    <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesItemDetails/Item_Group_Item_Group">
+                                                                                        <Annotation Term="Common.Label" String="Item Group"/>
+                                                                                    </Annotations>
+                                                                                    <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesItemDetails/Line_Item">
+                                                                                        <Annotation Term="Common.Label" String="Line Item No"/>
+                                                                                    </Annotations>
+                                                                                    <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesItemDetails/ServiceNo">
+                                                                                        <Annotation Term="Common.Label" String="Service No"/>
+                                                                                    </Annotations>
+                                                                                    <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesItemDetails/Short_Text">
+                                                                                        <Annotation Term="Common.Label" String="Short Text"/>
+                                                                                    </Annotations>
+                                                                                    <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesItemDetails/UoM">
+                                                                                        <Annotation Term="Common.Label" String="Unit of Measurement"/>
+                                                                                    </Annotations>
+                                                                                    <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesItemDetails/Unit_Price">
+                                                                                        <Annotation Term="Common.Label" String="Unit Price"/>
+                                                                                    </Annotations>
+                                                                                    <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesItemDetails/Currecny">
+                                                                                        <Annotation Term="Common.Label" String="Currency"/>
+                                                                                    </Annotations>
+                                                                                    <Annotations Target="CRFANDESTIMATEService.CompanyEstimatesItemDetails/Total">
+                                                                                        <Annotation Term="Common.Label" String="Total"/>
+                                                                                    </Annotations>
+                                                                                </Schema>
+                                                                            </edmx:DataServices>
+                                                                        </edmx:Edmx>

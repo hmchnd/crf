@@ -1,0 +1,64 @@
+<mvc:View controllerName="ncoc.eprocurement.crffioriapp.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.uxap" xmlns:m="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+    <ObjectPageLayout id="idOPL" upperCaseAnchorbar="false">
+        <headerTitle>
+            <ObjectPageHeader objectTitle="Customer Requisition Form" />
+        </headerTitle>
+        <sections>
+            <ObjectPageSection title="Contract Information">
+                <subSections>
+                    <ObjectPageSubSection class="sapUIContentPadding">
+                        <f:SimpleForm id="SimpleFormDisplay480_12120Dual" editable="false" layout="ColumnLayout">
+                            <f:content>
+                                <m:Label text="Directorate" />
+                                <m:Input id="idDirectorate" />
+                                <m:Label text="Contract Holder" />
+                                <m:Input id="idContHolder" />
+                                <m:Label text="Contract Title" />
+                                <m:Input id="idContTitle" />
+                                <m:Label text="Contractor's Name" />
+                                <m:Input id="idContractorName" />
+                                <m:Label text="Contract Number" />
+                                <m:Input id="idContNumber" />
+                                <m:Label text="Date of Request" />
+                                <m:DatePicker dateValue="" id="idDoR" />
+                                <m:Label text="Contract Strategy" />
+                                <m:TextArea id="idContStrategy" width="100%" height="20%" />
+                                <m:Label text="Estimated Contract Value (In contract currency)" />
+                                <m:Input id="idContValInContCurr" />
+                                <m:Label text="Estimated Contract Value (In USD)" />
+                                <m:Input id="idContValInUSD" />
+                                <m:Label text="Estimated Contingency (In contract value)" />
+                                <m:Input id="idEstContingency" />
+                                <m:Label text="Forecast Duration" />
+                                <m:Input id="idForecastDuration" />
+                                <m:Label text="Planned Start Date" />
+                                <m:DatePicker dateValue="" id="idPlanStartDate" />
+                                <m:Label text="Planned End Date" />
+                                <m:DatePicker dateValue="" id="idPlanEndDate" />
+                                <m:Label text="Cost Object (WBS/WBE, Cost Centre)" />
+                                <m:Input id="idCostObject" />
+                                <m:Label text="Optional Extension" />
+                                <m:Input id="idOptionalExtension" />
+                                <m:Label text="Estimated Local Content (%)" />
+                                <m:Input id="idEstLocalContent" />
+                                <m:Label text="Retrospective" />
+                                <m:Input id="idRestrospective" />
+                                <m:Label text="LTPO No." />
+                                <m:Input id="idLTPO" />
+
+                            </f:content>
+                        </f:SimpleForm>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection title="Scope of Work" />
+            <ObjectPageSection title="HSSE" />
+            <ObjectPageSection title="Sourcing Strategy" />
+            <ObjectPageSection title="Source Justification" />
+            <ObjectPageSection title="Contractor's Pre-Qualification Status" />
+        </sections>
+    </ObjectPageLayout>
+    <!-- <Page id="page" title="{i18n>title}">
+        <content />
+    </Page> -->
+</mvc:View>
