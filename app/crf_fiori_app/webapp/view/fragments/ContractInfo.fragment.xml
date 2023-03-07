@@ -1,0 +1,34 @@
+<core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:smartForm="sap.ui.comp.smartform" xmlns:smartField="sap.ui.comp.smartfield">
+    <smartForm:SmartForm id="generalInfoSmartForm" editable="true">
+        <smartForm:layout>
+            <smartForm:ColumnLayout columnsM="2" columnsL="3" columnsXL="4" />
+        </smartForm:layout>
+        <smartForm:Group label="General Information">
+            <smartForm:GroupElement label="Directorate">
+                <smartField:SmartField value="{Directorate}" id="idDirectorate" mandatory="true" />
+            </smartForm:GroupElement>
+
+            <smartForm:GroupElement label="Request Date">
+                <smartField:SmartField value="{Request_Date}" id="idRequest_Date" >
+                    <smartField:configuration>
+                        <smartField:Configuration controlType="datePicker" />
+                    </smartField:configuration>
+                </smartField:SmartField>
+            </smartForm:GroupElement>
+
+            <smartForm:GroupElement label="Contract Holder">
+                <smartField:SmartField value="{Contract_Holder}" id="idContract_Holder"  />
+            </smartForm:GroupElement>
+
+            <smartForm:GroupElement label="Contract Title">
+                <smartField:SmartField value="{Contract_Title}" id="idContract_Title" mandatory="true" />
+            </smartForm:GroupElement>
+
+            <smartForm:GroupElement label="Contractor Name">
+                <smartField:SmartField value="{Contractor_Name}"  id="idContractor_Name" />
+            </smartForm:GroupElement>
+
+            
+        </smartForm:Group>
+    </smartForm:SmartForm>
+</core:FragmentDefinition>

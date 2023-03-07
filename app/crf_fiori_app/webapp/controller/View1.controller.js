@@ -12,17 +12,28 @@ sap.ui.define([
 
         return Controller.extend("ncoc.eprocurement.crffioriapp.controller.View1", {
             onInit: function () {
-                //create MockServer
-                var oMockServer = new MockServer({
-                        rootUri: "/crfandestimate/"
+              
+            },
+            onAfterRendering:function(){
+
+                var oModel = this.getOwnerComponent().getModel();
+                var oCRFHeaderFieldsSet = oModel.createEntry("CRFHeaderFields", {
+                    properties: {
+                        "Directorate": "",
+                        "Contract_Holder": "",
+                        "Contract_Title": "",  
+                        "Contractor_Name": "",
+                        "Contract_Number": "",
+                        "Request_Date": new Date()
+                    
+                    },
+                    success: function (oData, response) { }.bind(this),
+                    error: function (oError) { }.bind(this)
                 });
-                //Configure MockServer
-                MockServer.config({
-                    autoRespond : true,
-                    autoRespondAfter : 1000
+
+                this.getView().bindElement({
+                    path: oCRFHeaderFieldsSet.sPath
                 });
-                //Simulate the MockServer
-                var sPath= sap.ui.require.toUrl("https://port4004-workspaces-ws-fplz2.us10.trial.applicationstudio.cloud.sap/")
             }
         });
     });
