@@ -88,8 +88,16 @@
                 </subSections>
             </ObjectPageSection>
         </sections>
+        <footer>
+            <m:Toolbar>
+                <m:ToolbarSpacer/>
+                <m:Button text="Approve" press="onPress" type="Accept"/>
+			    <m:Button text="Reject" press="onPress" type="Reject"/>
+            </m:Toolbar>
+        </footer>
     </ObjectPageLayout>
     <!-- <Page id="page" title="{i18n>title}">
         <content />
     </Page> -->
+    
 </mvc:View>

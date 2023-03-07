@@ -63,15 +63,15 @@ entity CRFHeaderFields : managed {
     @title : 'HSSE Category Justification'
     HSSE_Cat_Justification: String;
     @title : 'Competitve Tender'
-    Competitive_Tender: Boolean;
-    @title : 'Single/Sole Source'
-    Source: Boolean;
+    Strategy: String;
     @title : 'TEP(Scoring Matrix)'
     TEP: Boolean;
-    @title : 'Technical Evaluation Questions'
-    TEQ: Boolean;
+    @title : 'Technical Evaluation Applicable'
+    TEA: Boolean;
     @title : 'Technical Evaluation Not Applicable'
     TE_NA: Boolean;
+    @title : 'Technical Evaluation Questions'
+    TEQ: String;
     @title : 'Source Justification'
     Source_Justification: String;
     @title : 'Detailed Explanation of Single/Source Justification'

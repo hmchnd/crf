@@ -1,6 +1,29 @@
 <core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:smartForm="sap.ui.comp.smartform" xmlns:smartField="sap.ui.comp.smartfield">
     <smartForm:SmartForm id="idSourceJustification" editable="true">
         <smartForm:Group>
+            <smartForm:GroupElement label="Sole Source or Single Source Justification">
+                <smartField:SmartField value="{Source_Justification}" id="idSrcJustification" mandatory="true" />
+            </smartForm:GroupElement>
+
+            <smartForm:GroupElement label="Detailed explanation of Single/Sole Source Justification">
+                <smartField:SmartField value="{Detail_Expln_Sourc_Just}" id="idDetailExplnSrcJust" mandatory="true" />
+            </smartForm:GroupElement>
+
+            <smartForm:GroupElement label="Other contracting options considered">
+                <smartField:SmartField value="{Other_Cont_Optn_Considered}" id="idOthContOptn" mandatory="true" />
+            </smartForm:GroupElement>
+
+            <smartForm:GroupElement label="Details of other NCOC N.V. Contracts awarded to Contractor">
+                <smartField:SmartField value="{Detail_NCOC_Contract_Award}" id="idDtlNCOCContAward" mandatory="true" />
+            </smartForm:GroupElement>
+
+            <smartForm:GroupElement label="Performance of Contractor under other NCOC N.V. Contracts">
+                <smartField:SmartField value="{Perf_Contractor_NCOC_Cont}" id="idPerfContNCOC" mandatory="true" />
+            </smartForm:GroupElement>
+
+            <smartForm:GroupElement label="Consequences of non-approval by NCOC N.V. respective Contracts Board">
+                <smartField:SmartField value="{Consq_Non_App_NCOC_Contract_Board}" id="idConsqNCOCBoard" mandatory="true" />
+            </smartForm:GroupElement>
         </smartForm:Group>
     </smartForm:SmartForm>
 </core:FragmentDefinition>

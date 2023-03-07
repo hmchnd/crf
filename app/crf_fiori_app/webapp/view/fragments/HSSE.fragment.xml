@@ -47,9 +47,9 @@
             </smartForm:GroupElement>
         </smartForm:Group>
         <smartForm:Group >
-            <smartForm:GroupElement label="HSSE Category Justification">
-                <smartField:SmartField value="{HSSE_Cat_Justification}" id="idHSSECatJust" mandatory="true" />
-            </smartForm:GroupElement>
+        <smartForm:GroupElement label="HSSE Category Justification">
+            <smartField:SmartField value="{HSSE_Cat_Justification}" id="idHSSECatJust" mandatory="true" />
+        </smartForm:GroupElement>
         </smartForm:Group>
     </smartForm:SmartForm>
 </core:FragmentDefinition>
