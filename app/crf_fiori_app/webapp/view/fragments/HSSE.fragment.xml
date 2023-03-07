@@ -1,0 +1,55 @@
+<core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:smartForm="sap.ui.comp.smartform" xmlns:smartField="sap.ui.comp.smartfield">
+    <smartForm:SmartForm id="idHSSE" editable="true">
+        <smartForm:Group label="HSSE Risk">
+            <smartForm:GroupElement label="High">
+                <smartField:SmartField value="{HSSE_Risk}" id="idHSSERiskHigh" mandatory="true">
+                    <smartField:configuration>
+                        <smartField:Configuration controlType="selection" />
+                    </smartField:configuration>
+                </smartField:SmartField>
+            </smartForm:GroupElement>
+            <smartForm:GroupElement label="Medium">
+                <smartField:SmartField value="{HSSE_Risk}" id="idHSSERiskMedium" mandatory="true">
+                    <smartField:configuration>
+                        <smartField:Configuration controlType="selection" />
+                    </smartField:configuration>
+                </smartField:SmartField>
+            </smartForm:GroupElement>
+            <smartForm:GroupElement label="Low">
+                <smartField:SmartField value="{HSSE_Risk}" id="idHSSERiskLow" mandatory="true">
+                    <smartField:configuration>
+                        <smartField:Configuration controlType="selection" />
+                    </smartField:configuration>
+                </smartField:SmartField>
+            </smartForm:GroupElement>
+        </smartForm:Group>
+        <smartForm:Group label="HSSE MS Influence">
+            <smartForm:GroupElement label="High">
+                <smartField:SmartField value="{HSSE_Risk}" id="idHSSEIfluenceHigh" mandatory="true">
+                    <smartField:configuration>
+                        <smartField:Configuration controlType="selection" />
+                    </smartField:configuration>
+                </smartField:SmartField>
+            </smartForm:GroupElement>
+            <smartForm:GroupElement label="Medium">
+                <smartField:SmartField value="{HSSE_Risk}" id="idHSSEIfluencekMedium" mandatory="true">
+                    <smartField:configuration>
+                        <smartField:Configuration controlType="selection" />
+                    </smartField:configuration>
+                </smartField:SmartField>
+            </smartForm:GroupElement>
+            <smartForm:GroupElement label="Low">
+                <smartField:SmartField value="{HSSE_Risk}" id="idHSSEIfluencekLow" mandatory="true">
+                    <smartField:configuration>
+                        <smartField:Configuration controlType="selection" />
+                    </smartField:configuration>
+                </smartField:SmartField>
+            </smartForm:GroupElement>
+        </smartForm:Group>
+        <smartForm:Group >
+            <smartForm:GroupElement label="HSSE Category Justification">
+                <smartField:SmartField value="{HSSE_Cat_Justification}" id="idHSSECatJust" mandatory="true" />
+            </smartForm:GroupElement>
+        </smartForm:Group>
+    </smartForm:SmartForm>
+</core:FragmentDefinition>

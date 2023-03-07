@@ -9,7 +9,7 @@
             </smartForm:GroupElement>
 
             <smartForm:GroupElement label="Request Date">
-                <smartField:SmartField value="{Request_Date}" id="idRequest_Date" >
+                <smartField:SmartField value="{Request_Date}" id="idRequest_Date">
                     <smartField:configuration>
                         <smartField:Configuration controlType="datePicker" />
                     </smartField:configuration>
@@ -17,7 +17,7 @@
             </smartForm:GroupElement>
 
             <smartForm:GroupElement label="Contract Holder">
-                <smartField:SmartField value="{Contract_Holder}" id="idContract_Holder"  />
+                <smartField:SmartField value="{Contract_Holder}" id="idContract_Holder" />
             </smartForm:GroupElement>
 
             <smartForm:GroupElement label="Contract Title">
@@ -25,51 +25,51 @@
             </smartForm:GroupElement>
 
             <smartForm:GroupElement label="Contractor's Name">
-                <smartField:SmartField value="{Contractor_Name}"  id="idContractor_Name" />
+                <smartField:SmartField value="{Contractor_Name}" id="idContractor_Name" />
             </smartForm:GroupElement>
 
             <smartForm:GroupElement label="Contract Number">
-                <smartField:SmartField value="{Contract_Number}"  id="idContract_Number" />
+                <smartField:SmartField value="{Contract_Number}" id="idContract_Number" />
             </smartForm:GroupElement>
-            
+
             <smartForm:GroupElement label="Contracting Strategy">
-                <smartField:SmartField value="{Contract_Strategy}"  id="idContract_Strategy" />
+                <smartField:SmartField value="{Contract_Strategy}" id="idContract_Strategy" />
             </smartForm:GroupElement>
 
             <smartForm:GroupElement label="Estimated Contract Value (in Contract currency)">
-                <smartField:SmartField value="{Est_Cont_Value}"  id="idEstContValue" />
+                <smartField:SmartField value="{Est_Cont_Value}" id="idEstContValue" />
             </smartForm:GroupElement>
-            
+
             <smartForm:GroupElement label="Estimated Contract Cuurency">
-                <smartField:SmartField value="{Contract_Currency}"  id="idEstContCurr" />
+                <smartField:SmartField value="{Contract_Currency}" id="idEstContCurr" />
             </smartForm:GroupElement>
 
             <smartForm:GroupElement label="Estimated Contract Value (In USD)">
-                <smartField:SmartField value="{Est_Cont_Value_USD}"  id="idEstContValUSD" />
+                <smartField:SmartField value="{Est_Cont_Value_USD}" id="idEstContValUSD" />
             </smartForm:GroupElement>
 
             <smartForm:GroupElement label="Estimated Contingency (in Contract currency)">
-                <smartField:SmartField value="{Est_Contigency}"  id="idEstContigency" />
+                <smartField:SmartField value="{Est_Contigency}" id="idEstContigency" />
             </smartForm:GroupElement>
 
             <smartForm:GroupElement label="Cost Object (WBS/WBE, Cost Centre)">
-                <smartField:SmartField value="{Cost_Object}"  id="idCostObject" />
+                <smartField:SmartField value="{Cost_Object}" id="idCostObject" />
             </smartForm:GroupElement>
 
             <smartForm:GroupElement label="Estimated Local Content (%)">
-                <smartField:SmartField value="{Est_Local_Content}"  id="idEstLocalContent" />
+                <smartField:SmartField value="{Est_Local_Content}" id="idEstLocalContent" />
             </smartForm:GroupElement>
 
             <smartForm:GroupElement label="LTPO No.">
-                <smartField:SmartField value="{LTPO_No}"  id="idLTPO" />
+                <smartField:SmartField value="{LTPO_No}" id="idLTPO" />
             </smartForm:GroupElement>
 
             <smartForm:GroupElement label="Forecast Contract Duration">
-                <smartField:SmartField value="{Forecast_Contract_Duration}"  id="idForecastContDuration" />
+                <smartField:SmartField value="{Forecast_Contract_Duration}" id="idForecastContDuration" />
             </smartForm:GroupElement>
 
             <smartForm:GroupElement label="Planned Start Date">
-                <smartField:SmartField value="{Planned_Start_Date}" id="idPlanStartDate" >
+                <smartField:SmartField value="{Planned_Start_Date}" id="idPlanStartDate">
                     <smartField:configuration>
                         <smartField:Configuration controlType="datePicker" />
                     </smartField:configuration>
@@ -77,13 +77,12 @@
             </smartForm:GroupElement>
 
             <smartForm:GroupElement label="Planned End Date">
-                <smartField:SmartField value="{Planned_End_Date}" id="idPlanEndDate" >
+                <smartField:SmartField value="{Planned_End_Date}" id="idPlanEndDate">
                     <smartField:configuration>
                         <smartField:Configuration controlType="datePicker" />
                     </smartField:configuration>
                 </smartField:SmartField>
             </smartForm:GroupElement>
-
         </smartForm:Group>
     </smartForm:SmartForm>
 </core:FragmentDefinition>

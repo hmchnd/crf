@@ -52,26 +52,41 @@
                     </ObjectPageSubSection>
                 </subSections>
             </ObjectPageSection>
-            <ObjectPageSection title="Scope of Work" />
-            <ObjectPageSection title="HSSE">
+            <ObjectPageSection title="Scope of Work">
                 <subSections>
                     <ObjectPageSubSection>
-                        <!-- <smartForm:SmartForm entityType="{CRFHeaderFields}">
-                            <smartForm:layout>
-                                <smartForm:ColumnLayout columnsM="2" columnsL="3" columnsXL="4" />
-                            </smartForm:layout>
-                            <smartForm:Group>
-                                <smartForm:GroupElement>
-                                    <smartField:SmartField id="IDProduct" value="{/Directorate}" />
-                                </smartForm:GroupElement>
-                            </smartForm:Group>
-                        </smartForm:SmartForm> -->
+                        <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.ScopeOfWork" type="XML" />
                     </ObjectPageSubSection>
                 </subSections>
             </ObjectPageSection>
-            <ObjectPageSection title="Sourcing Strategy" />
-            <ObjectPageSection title="Source Justification" />
-            <ObjectPageSection title="Contractor's Pre-Qualification Status" />
+            <ObjectPageSection title="HSSE">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.HSSE" type="XML" />
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection title="Sourcing Strategy">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.SourcingStrategy" type="XML" />
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection title="Source Justification">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.SourceJustification" type="XML" />
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection title="Contractor's Pre-Qualification Status">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.PreQualification" type="XML" />
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
         </sections>
     </ObjectPageLayout>
     <!-- <Page id="page" title="{i18n>title}">

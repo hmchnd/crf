@@ -57,9 +57,9 @@ entity CRFHeaderFields : managed {
     @title : 'Risks, Constrains and Sensitivities'
     RCS: String;
     @title : 'HSSE Risk'
-    HSSE_Risk: String;
+    HSSE_Risk: Boolean;
     @title : 'HSSE ME Influence'
-    HSSE_ME_Influence: String;
+    HSSE_ME_Influence: Boolean;
     @title : 'HSSE Category Justification'
     HSSE_Cat_Justification: String;
     @title : 'Competitve Tender'
