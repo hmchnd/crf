@@ -1,14 +1,4 @@
-<mvc:View
-    controllerName="ncoc.eprocurement.crffioriapp.controller.View1"
-    xmlns:mvc="sap.ui.core.mvc"
-    displayBlock="true"
-    xmlns="sap.uxap"
-    xmlns:m="sap.m"
-    xmlns:l="sap.ui.layout"
- 
-    xmlns:core="sap.ui.core"
-    
->
+<mvc:View controllerName="ncoc.eprocurement.crffioriapp.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.uxap" xmlns:m="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
     <ObjectPageLayout id="idOPL" upperCaseAnchorbar="false">
         <headerTitle>
             <ObjectPageHeader objectTitle="Customer Requisition Form" />
@@ -17,9 +7,7 @@
             <ObjectPageSection title="Contract Information">
                 <subSections>
                     <ObjectPageSubSection class="sapUIContentPadding">
-
-<core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.ContractInfo" type="XML"/>
-
+                        <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.ContractInfo" type="XML" />
 
                         <!-- <f:SimpleForm id="SimpleFormDisplay480_12120Dual" editable="false" layout="ColumnLayout">
                             <f:content>
@@ -68,8 +56,6 @@
             <ObjectPageSection title="HSSE">
                 <subSections>
                     <ObjectPageSubSection>
-
-                    
                         <!-- <smartForm:SmartForm entityType="{CRFHeaderFields}">
                             <smartForm:layout>
                                 <smartForm:ColumnLayout columnsM="2" columnsL="3" columnsXL="4" />
