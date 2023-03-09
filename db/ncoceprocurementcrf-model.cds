@@ -2,7 +2,7 @@ namespace ncoc.eprocurement.crfandcompanyestimates;
 using {
     managed,
     temporal,
-    Currency
+    Currency as curr
 } from '@sap/cds/common';
 
 
@@ -22,11 +22,11 @@ entity CRFHeaderFields : managed {
     @title : 'Contract Strategy'
     Contract_Strategy: String;
     @title : 'Contract Currency'
-    Contract_Currency: Currency;
+    Contract_Currency: curr;
     @title : 'Exchange Rate Date'
     Exchng_Rate_Date: Date;
     @title : 'Exchange Rate Contract Currecny'
-    Exchng_Rate_Cont_Curr: Currency;
+    Exchng_Rate_Cont_Curr: curr;
     @title : 'Estimated Contract Value (In Contract Currency)'
     Est_Cont_Value: Decimal;
     @title : 'Estimated Contract Value in USD'

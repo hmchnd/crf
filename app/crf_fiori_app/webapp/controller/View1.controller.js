@@ -12,7 +12,8 @@ sap.ui.define([
 
         return Controller.extend("ncoc.eprocurement.crffioriapp.controller.View1", {
             onInit: function () {
-              
+                var oObjectPageLayout = this.byId("idOPL");
+                oObjectPageLayout.setShowFooter(!oObjectPageLayout.getShowFooter());
             },
             onAfterRendering:function(){
 
@@ -34,6 +35,9 @@ sap.ui.define([
                 this.getView().bindElement({
                     path: oCRFHeaderFieldsSet.sPath
                 });
+            },
+            onSave : function(){
+                alert("Data Saved");
             }
         });
     });
