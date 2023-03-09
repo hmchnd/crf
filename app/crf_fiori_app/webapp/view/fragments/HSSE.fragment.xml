@@ -27,21 +27,21 @@
             <smartForm:GroupElement label="High">
                 <smartField:SmartField value="{HSSE_Risk}" id="idHSSEIfluenceHigh" mandatory="true">
                     <smartField:configuration>
-                        <smartField:Configuration controlType="selection" />
+                        <smartField:Configuration controlType="dropDownList" />
                     </smartField:configuration>
                 </smartField:SmartField>
             </smartForm:GroupElement>
             <smartForm:GroupElement label="Medium">
-                <smartField:SmartField value="{HSSE_Risk}" id="idHSSEIfluencekMedium" mandatory="true">
+                <smartField:SmartField value="{HSSE_Risk}" id="idHSSEIfluenceMedium" mandatory="true">
                     <smartField:configuration>
-                        <smartField:Configuration controlType="selection" />
+                        <smartField:Configuration controlType="dropDownList" />
                     </smartField:configuration>
                 </smartField:SmartField>
             </smartForm:GroupElement>
             <smartForm:GroupElement label="Low">
                 <smartField:SmartField value="{HSSE_Risk}" id="idHSSEIfluencekLow" mandatory="true">
                     <smartField:configuration>
-                        <smartField:Configuration controlType="selection" />
+                        <smartField:Configuration controlType="dropDownList" />
                     </smartField:configuration>
                 </smartField:SmartField>
             </smartForm:GroupElement>

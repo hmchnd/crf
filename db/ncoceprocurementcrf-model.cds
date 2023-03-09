@@ -1,7 +1,8 @@
 namespace ncoc.eprocurement.crfandcompanyestimates;
 using {
     managed,
-    temporal
+    temporal,
+    Currency
 } from '@sap/cds/common';
 
 
@@ -21,11 +22,11 @@ entity CRFHeaderFields : managed {
     @title : 'Contract Strategy'
     Contract_Strategy: String;
     @title : 'Contract Currency'
-    Contract_Currency: String(3);
+    Contract_Currency: Currency;
     @title : 'Exchange Rate Date'
     Exchng_Rate_Date: Date;
     @title : 'Exchange Rate Contract Currecny'
-    Exchng_Rate_Cont_Curr: String(3);
+    Exchng_Rate_Cont_Curr: Currency;
     @title : 'Estimated Contract Value (In Contract Currency)'
     Est_Cont_Value: Decimal;
     @title : 'Estimated Contract Value in USD'
@@ -57,9 +58,9 @@ entity CRFHeaderFields : managed {
     @title : 'Risks, Constrains and Sensitivities'
     RCS: String;
     @title : 'HSSE Risk'
-    HSSE_Risk: Boolean;
+    HSSE_Risk: HSSE_Value;
     @title : 'HSSE ME Influence'
-    HSSE_ME_Influence: Boolean;
+    HSSE_ME_Influence: HSSE_Value;
     @title : 'HSSE Category Justification'
     HSSE_Cat_Justification: String;
     @title : 'Competitve Tender'
@@ -138,3 +139,6 @@ entity CompanyEstimatesItemDetails: managed {
     Total: String;
 
 }
+
+@assert.range
+    type HSSE_Value : String enum { High; Medium; Low }

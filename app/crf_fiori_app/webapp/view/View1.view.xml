@@ -95,6 +95,7 @@
 			    <m:Button text="Reject" press="onPress" type="Reject"/>
             </m:Toolbar>
         </footer>
+        
     </ObjectPageLayout>
     <!-- <Page id="page" title="{i18n>title}">
         <content />
