@@ -4,7 +4,7 @@
             <smartForm:GroupElement label="HSSE Risk">
                 <smartField:SmartField value="{HSSE_Risk}" id="idHSSERisk" mandatory="true">
                     <smartField:configuration>
-                        <smartField:Configuration controlType="selection" />
+                        <smartField:Configuration controlType="dropDownList" />
                     </smartField:configuration>
                 </smartField:SmartField>
             </smartForm:GroupElement>
