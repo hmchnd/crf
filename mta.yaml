@@ -1,6 +1,6 @@
 _schema-version: "3.1"
 ID: zcrfandcompanyestimate
-description: A simple CAP project.
+description: Simple To DO CAP App
 version: 1.0.0
 modules:
 - name: zcrfandcompanyestimate-srv
@@ -8,26 +8,61 @@ modules:
   path: gen/srv
   requires:
   - name: CRFANDCOMPANYESTIMATE
+  - name: uaa_zcrfandcompanyestimate
+
   provides:
   - name: srv-api
     properties:
       srv-url: ${default-url}
+      forwardAuthToken: true 
+      SAP_JWT_TRUST_ACL: '[{"clientid":"*","identityzone":"*"}]'
   parameters:
     buildpack: nodejs_buildpack
   build-parameters:
     builder: npm-ci
-- name: zcrfandcompanyestimate-db-deployer
+- name: CRFANDCOMPANYESTIMATE-deployer
   type: hdb
   path: gen/db
   requires:
   - name: CRFANDCOMPANYESTIMATE
+
   parameters:
     buildpack: nodejs_buildpack
-- name: undefined-app-content
+- name: zcrfandcompanyestimate-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: zcrfandcompanyestimate-destination-service
+    parameters:
+      content-target: true
+  - name: zcrfandcompanyestimate_html_repo_host
+    parameters:
+      service-key:
+        name: zcrfandcompanyestimate_html_repo_host-key
+  - name: uaa_zcrfandcompanyestimate
+    parameters:
+      service-key:
+        name: uaa_zcrfandcompanyestimate-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: CRFAPP_zcrfandcompanyestimate_html_repo_host
+          ServiceInstanceName: zcrfandcompanyestimate-html5-app-host-service
+          ServiceKeyName: zcrfandcompanyestimate_html_repo_host-key
+          sap.cloud.service: CRFAPP
+        - Authentication: OAuth2UserTokenExchange
+          Name: CRFAPP_uaa_zcrfandcompanyestimate
+          ServiceInstanceName: zcrfandcompanyestimate-xsuaa-service
+          ServiceKeyName: uaa_zcrfandcompanyestimate-key
+          sap.cloud.service: CRFAPP
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+- name: zcrfandcompanyestimate-app-content
   type: com.sap.application.content
   path: .
   requires:
-  - name: undefined-repo-host
+  - name: zcrfandcompanyestimate_html_repo_host
     parameters:
       content-target: true
   build-parameters:
@@ -53,17 +88,12 @@ resources:
   parameters:
     service: hana
     service-plan: hdi-shared
-- name: undefined-repo-host
-  type: org.cloudfoundry.managed-service
-  parameters:
-    service: html5-apps-repo
-    service-name: undefined-html5-srv
-    service-plan: app-host
-- name: undefined-destination-service
+
+- name: zcrfandcompanyestimate-destination-service
   type: org.cloudfoundry.managed-service
   parameters:
     config:
-      HTML5Runtime_enabled: false
+      HTML5Runtime_enabled: true
       init_data:
         instance:
           destinations:
@@ -72,11 +102,33 @@ resources:
             ProxyType: Internet
             Type: HTTP
             URL: https://ui5.sap.com
+          - Authentication: NoAuthentication
+            HTML5.DynamicDestination: true
+            HTML5.ForwardAuthToken: true
+            Name: zcrfandcompanyestimate-srv-api
+            ProxyType: Internet
+            Type: HTTP
+            URL: ~{srv-api/srv-url}
           existing_destinations_policy: update
       version: 1.0.0
     service: destination
-    service-name: undefined-destination-service
+    service-name: zcrfandcompanyestimate-destination-service
     service-plan: lite
+  requires:
+  - name: srv-api
+- name: zcrfandcompanyestimate_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: zcrfandcompanyestimate-html5-app-host-service
+    service-plan: app-host
+- name: uaa_zcrfandcompanyestimate
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: zcrfandcompanyestimate-xsuaa-service
+    service-plan: application
 parameters:
   deploy_mode: html5-repo
   enable-parallel-deployments: true
