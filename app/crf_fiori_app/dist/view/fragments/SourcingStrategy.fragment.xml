@@ -1,0 +1,41 @@
+<core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:smartForm="sap.ui.comp.smartform" xmlns:smartField="sap.ui.comp.smartfield">
+    <smartForm:SmartForm id="idSourcingStrategy" editable="true">
+        <smartForm:Group>
+            <smartForm:GroupElement label="Strategy">
+                <smartField:SmartField value="{Strategy}" id="idStrategy" mandatory="true">
+                    <smartField:configuration>
+                        <smartField:Configuration controlType="dropDownList" />
+                    </smartField:configuration>
+                </smartField:SmartField>
+            </smartForm:GroupElement>
+
+            <smartForm:GroupElement label="TEP (Scoring Matrix) Technical Evaluation Applicable">
+                <smartField:SmartField value="{TEP}" id="idTEP" mandatory="true">
+                    <smartField:configuration>
+                        <smartField:Configuration controlType="checkBox" />
+                    </smartField:configuration>
+                </smartField:SmartField>
+            </smartForm:GroupElement>
+
+            <smartForm:GroupElement label="Technical evaluations question(s) Technical Evaluation Applicable">
+                <smartField:SmartField value="{TEA}" id="idTEA" mandatory="true">
+                    <smartField:configuration>
+                        <smartField:Configuration controlType="checkBox" />
+                    </smartField:configuration>
+                </smartField:SmartField>
+            </smartForm:GroupElement>
+
+            <smartForm:GroupElement label="Technical Evaluation Not applicable">
+                <smartField:SmartField value="{TE_NA}" id="idTENA" mandatory="true">
+                    <smartField:configuration>
+                        <smartField:Configuration controlType="checkBox" />
+                    </smartField:configuration>
+                </smartField:SmartField>
+            </smartForm:GroupElement>
+
+            <smartForm:GroupElement label="Technical Evaluation Question(s)">
+            <smartField:SmartField value="{TEQ}" id="idTEQ" mandatory="true" />
+        </smartForm:GroupElement>
+        </smartForm:Group>
+    </smartForm:SmartForm>
+</core:FragmentDefinition>

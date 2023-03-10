@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:smartForm="sap.ui.comp.smartform" xmlns:smartField="sap.ui.comp.smartfield">
+    <smartForm:SmartForm id="idPreQualification" editable="true">
+        <smartForm:Group>
+            <smartForm:GroupElement label="Commodity Code">
+                <smartField:SmartField value="{Commodity_Code}" id="idCommCode" mandatory="true" />
+            </smartForm:GroupElement>
+
+            <smartForm:GroupElement label="Pre-Qualification Status">
+                <smartField:SmartField value="{Prequalification_Status}" id="idPreQuali" mandatory="true" />
+            </smartForm:GroupElement>
+        </smartForm:Group>
+    </smartForm:SmartForm>
+</core:FragmentDefinition>

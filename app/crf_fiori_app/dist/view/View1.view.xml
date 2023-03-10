@@ -1,0 +1,66 @@
+<mvc:View controllerName="ncoc.eprocurement.crffioriapp.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.uxap" xmlns:m="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+    <ObjectPageLayout id="idOPL">
+        <headerTitle>
+            <ObjectPageHeader objectTitle="Contract Requisition Form" />
+        </headerTitle>
+        <sections>
+            <ObjectPageSection title="Contract Information">
+                <subSections>
+                    <ObjectPageSubSection class="sapUIContentPadding">
+                        <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.ContractInfo" type="XML" />
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection title="Scope of Work">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.ScopeOfWork" type="XML" />
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection title="HSSE">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.HSSE" type="XML" />
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection title="Sourcing Strategy">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.SourcingStrategy" type="XML" />
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection title="Source Justification">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.SourceJustification" type="XML" />
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection title="Contractor's Pre-Qualification Status">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.PreQualification" type="XML" />
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+        </sections>
+        <footer>
+			<m:OverflowToolbar>
+				<m:ToolbarSpacer />
+				<m:Button type="Accept" text="Accept"/>
+				<m:Button type="Reject" text="Reject"/>
+                <m:Button type="Success" text="Save" press="onSave" />
+                <m:Button text="Cancel/Clear" />
+			</m:OverflowToolbar>
+		</footer>
+        
+    </ObjectPageLayout>
+    
+    <!-- <Page id="page" title="{i18n>title}">
+        <content />
+    </Page> -->
+    
+</mvc:View>
