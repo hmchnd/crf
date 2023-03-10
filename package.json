@@ -7,22 +7,23 @@
     "private": true,
     "dependencies": {
         "@sap/cds": "^6",
-        "@sap/cds-odata-v2-adapter-proxy": "1.5.1",
-        "@sap/hana-client": "2.7.21",
+        "@sap/cds-odata-v2-adapter-proxy": "^1.9.20",
+        "@sap/hana-client": "^2.13.22",
         "@sap/textbundle": "^3.1.0",
         "@sap/xsenv": "^3.1.0",
         "@sap/xssec": "^3.1.2",
         "express": "4",
-        "hdb": "^0.18.3",
-        "passport": "^0.4.1"
+        "hdb": "^0.19.5",
+        "passport": "^0.6.0",
+        "ui5-task-zipper": "^0.5.0"
     },
     "devDependencies": {
-        "@sap/approuter": "9.0.x",
+        "@sap/approuter": "^9.4.0",
         "@sap/eslint-plugin-ui5-jsdocs": "2.0.x",
         "@sap/hdi-deploy": "^4",
         "@sap/ux-specification": "^1.108.0",
-        "sqlite3": "^5.0.4",
-        "rimraf": "^3.0.2"
+        "rimraf": "^3.0.2",
+        "sqlite3": "^5.0.4"
     },
     "scripts": {
         "start": "cds run",
@@ -32,7 +33,8 @@
         "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
     },
     "engines": {
-        "node": "^16.15"
+        "node": "^14.0.0",
+        "npm": "^8.1.4"
     },
     "eslintConfig": {
         "extends": "eslint:recommended",
@@ -60,9 +62,15 @@
         }
     },
     "cds": {
+        "hana": {
+            "deploy-format": "hdbtable"
+        },
         "requires": {
             "db": {
                 "kind": "hana"
+            },
+            "xsuaa": {
+                "kind": "xsuaa"
             }
         }
     },

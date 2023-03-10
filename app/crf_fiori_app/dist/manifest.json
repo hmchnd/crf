@@ -76,7 +76,9 @@
                     "synchronizationMode": "None",
                     "operationMode": "Server",
                     "autoExpandSelect": true,
-                    "earlyRequests": true
+                    "earlyRequests": true,
+                    "defaultBindingMode": "TwoWay",
+                    "useBatch": true
                 }
             }
         },
