@@ -1,15 +1,15 @@
 {
-  "Component-preload.js": 1678430089183,
+  "index.html": 1678101385595,
   "controller/View1.controller.js": 1678361585282,
   "utils/locate-reuse-libs.js": 1678101385595,
   "model/models.js": 1678101385595,
-  "manifest.json": 1678430088656,
+  "manifest.json": 1678451403380,
   "controller/App.controller.js": 1678101385595,
   "Component.js": 1678101385595,
-  "i18n/i18n.properties": 1678101385595,
-  "utils/locate-reuse-libs-dbg.js": 1678101385595,
-  "model/models-dbg.js": 1678101385595,
+  "Component-preload.js": 1678451403931,
   "controller/View1-dbg.controller.js": 1678361585282,
+  "model/models-dbg.js": 1678101385595,
+  "utils/locate-reuse-libs-dbg.js": 1678101385595,
   "controller/App-dbg.controller.js": 1678101385595,
   "Component-dbg.js": 1678101385595,
   "view/fragments/SourcingStrategy.fragment.xml": 1678361585282,
@@ -21,5 +21,5 @@
   "view/View1.view.xml": 1678361585282,
   "view/App.view.xml": 1678101385595,
   "css/style.css": 1678101385595,
-  "index.html": 1678101385595
+  "i18n/i18n.properties": 1678101385595
 }

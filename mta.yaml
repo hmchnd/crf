@@ -7,7 +7,7 @@ modules:
   type: nodejs
   path: gen/srv
   requires:
-  - name: CRFANDCOMPANYESTIMATE
+  - name: CRFANDCOMPANYESTIMATEDB
   - name: uaa_zcrfandcompanyestimate
 
   provides:
@@ -24,7 +24,7 @@ modules:
   type: hdb
   path: gen/db
   requires:
-  - name: CRFANDCOMPANYESTIMATE
+  - name: CRFANDCOMPANYESTIMATEDB
 
   parameters:
     buildpack: nodejs_buildpack
@@ -70,9 +70,9 @@ modules:
     requires:
     - artifacts:
       - ncoceprocurementcrffioriapp.zip
-      name: ncoceprocurementcrffioriapp
+      name: crf_fiori_app
       target-path: resources/
-- name: ncoceprocurementcrffioriapp
+- name: crf_fiori_app
   type: html5
   path: app/crf_fiori_app
   build-parameters:
@@ -83,7 +83,7 @@ modules:
     - npm run build:cf
     supported-platforms: []
 resources:
-- name: CRFANDCOMPANYESTIMATE
+- name: CRFANDCOMPANYESTIMATEDB
   type: com.sap.xs.hdi-container
   parameters:
     service: hana

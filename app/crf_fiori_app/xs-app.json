@@ -3,8 +3,8 @@
   "authenticationMethod": "route",
   "routes": [
     {
-      "source": "^/crfandestimate/(.*)$",
-      "target": "/crfandestimate/$1",
+      "source": "^/v2/crfandestimate/(.*)$",
+      "target": "/v2/crfandestimate/$1",
       "destination": "zcrfandcompanyestimate-srv-api",
       "authenticationType": "xsuaa",
       "csrfProtection": false
