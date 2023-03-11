@@ -3,4 +3,5 @@ using ncoc.eprocurement.crfandcompanyestimates as crf from '../db/ncoceprocureme
 service CRFANDESTIMATEService {
     entity CRFHeaderFields as select from crf.CRFHeaderFields;
     entity CompanyEstimatesHeaderItems as select from crf.CompanyEstimatesHeaderItems;
+    entity CompanyEstimation as select from crf.CompanyEstimation;
 }

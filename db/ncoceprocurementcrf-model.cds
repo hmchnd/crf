@@ -95,7 +95,7 @@ entity CompanyEstimatesHeaderItems: managed {
     @title : 'Item Group'
     @description : 'It will group the diffrent description based on numbers'
     key Item_Group: String;
-    @title : 'Item Title'
+    @title : 'Item No'
     ItemNo : String;
     @title : 'Item Category'
     Item_Category: String;
@@ -142,3 +142,33 @@ entity CompanyEstimatesItemDetails: managed {
 
 @assert.range
     type HSSE_Value : String enum { High; Medium; Low }
+
+entity CompanyEstimation : managed {
+    @title : 'Item No'
+    key ItemNo : String;
+    @title : 'Item Group'
+    @description : 'It will group the diffrent description based on numbers'
+    key Item_Group: String;
+    @title : 'Item Category'
+    key Item_Category: String;
+     @title : 'Plant'
+    Plant: String;
+    @title : 'Storage Location'
+    Storage_Loc: String;
+    @title : 'Material ID'
+    MaterialID: String;
+    @title : 'Description'
+    Description: String;
+    @title : 'Short Text'
+    Short_Text: String;
+    @title : 'Service No'
+    ServiceNo: String;
+    @title : 'Quantity'
+    Quantity : String;
+     @title : 'Unit of Measurement'
+    UoM: String(3);
+    @title : 'Price'
+    Total: String;
+    @title : 'Currency'
+    Currecny: String(3);
+}    
