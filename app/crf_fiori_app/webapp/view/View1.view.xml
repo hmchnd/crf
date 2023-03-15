@@ -53,6 +53,20 @@
                     </ObjectPageSubSection>
                 </subSections>
             </ObjectPageSection>
+            <ObjectPageSection title="CHAL">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.CHAL" type="XML" />
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection title="COAL">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.COAL" type="XML" />
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
         </sections>
         <footer>
 			<m:OverflowToolbar>
