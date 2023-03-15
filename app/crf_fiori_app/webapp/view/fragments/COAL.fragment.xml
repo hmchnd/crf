@@ -1,0 +1,64 @@
+	<core:FragmentDefinition  	xmlns:mvc="sap.ui.core.mvc"
+		xmlns="sap.m"
+		xmlns:upload="sap.m.upload" xmlns:core="sap.ui.core">
+    
+ <upload:UploadSet
+				id="UploadSet"
+				instantUpload="true"
+				showIcons="true"
+				uploadEnabled="true"
+				terminationEnabled="true"
+				fileTypes="txt,doc,png"
+				maxFileNameLength="30"
+				maxFileSize="200"
+				mediaTypes="text/plain,application/msword,image/png"
+				uploadUrl="../../../../upload"
+				items="{path: 'uploadModel>/items', templateShareable: false}"
+				mode="MultiSelect"
+				selectionChanged="onSelectionChange">
+			<upload:toolbar>
+				<OverflowToolbar>
+					<ToolbarSpacer/>
+					<!-- <Button
+							id="uploadSelectedButton"
+							text="Upload selected"
+							press="onUploadSelectedButton"/>
+					<Button
+							id="downloadSelectedButton"
+							text="Download selected"
+							press="onDownloadSelectedButton"/>
+					<Button
+							id="versionButton"
+							enabled="false"
+							text="Upload a new version"
+							press="onVersionUpload"/> -->
+					<upload:UploadSetToolbarPlaceholder />
+				</OverflowToolbar>
+			</upload:toolbar>
+			<upload:items>
+				<upload:UploadSetItem
+						fileName="{uploadModel>fileName}"
+						mediaType="{uploadModel>mediaType}"
+						url="{uploadModel>url}"
+						thumbnailUrl="{uploadModel>thumbnailUrl}"
+						markers="{path: 'uploadModel>markers', templateShareable: false}"
+						statuses="{path: 'uploadModel>statuses', templateShareable: false}"
+						uploadState="{uploadModel>uploadState}">
+					<upload:markers>
+						<ObjectMarker
+								type="{uploadModel>type}"
+								visibility="{uploadModel>visibility}"/>
+					</upload:markers>
+					<upload:statuses>
+						<ObjectStatus
+								title="{uploadModel>title}"
+								text="{uploadModel>text}"
+								state="{uploadModel>state}"
+								icon="{uploadModel>icon}"
+								active="{uploadModel>active}"/>
+					</upload:statuses>
+				</upload:UploadSetItem>
+			</upload:items>
+		</upload:UploadSet>
+    </core:FragmentDefinition>
+   

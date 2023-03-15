@@ -73,6 +73,8 @@ sap.ui.define([
               let oScreenUserInputJson = this.getView().getBindingContext().getObject();
               var oModel = this.getView().getModel();
               this.getView().setBusy(true);
+            
+
               if(oScreenUserInputJson.Contract_Number!='' || oScreenUserInputJson.Contract_Title!=''){
                 var oPendingChanges = oModel.getPendingChanges();
                 if (oPendingChanges) {

@@ -1,17 +1,20 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/m/MessageBox"
+    "sap/m/MessageBox",
+    "ncoc/eprocurement/crffioriapp/model/models"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, MessageBox) {
+    function (Controller, MessageBox,models) {
         "use strict";
 
         return Controller.extend("ncoc.eprocurement.crffioriapp.controller.View1", {
             onInit: function () {
                 var oObjectPageLayout = this.byId("idOPL");
                 oObjectPageLayout.setShowFooter(!oObjectPageLayout.getShowFooter());
+                let oUploadModel = new sap.ui.model.json.JSONModel(models.getUploadData());
+                this.getView().setModel(oUploadModel,"uploadModel");
             },
             onAfterRendering:function(){
 
@@ -73,6 +76,8 @@ sap.ui.define([
               let oScreenUserInputJson = this.getView().getBindingContext().getObject();
               var oModel = this.getView().getModel();
               this.getView().setBusy(true);
+            
+
               if(oScreenUserInputJson.Contract_Number!='' || oScreenUserInputJson.Contract_Title!=''){
                 var oPendingChanges = oModel.getPendingChanges();
                 if (oPendingChanges) {

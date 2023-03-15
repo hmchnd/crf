@@ -46,13 +46,19 @@
                     </ObjectPageSubSection>
                 </subSections>
             </ObjectPageSection>
+            <ObjectPageSection title="Company Estimation">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.CompanyEstimation" type="XML" />
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
         </sections>
         <footer>
 			<m:OverflowToolbar>
 				<m:ToolbarSpacer />
-				<m:Button type="Accept" text="Accept"/>
-				<m:Button type="Reject" text="Reject"/>
-                <m:Button type="Success" text="Save" press="onSave" />
+				<m:Button type="Submit for approval" text="Accept"/>
+                <m:Button  text="Save" press="onSave" />
                 <m:Button text="Cancel/Clear" />
 			</m:OverflowToolbar>
 		</footer>
