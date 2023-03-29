@@ -1,7 +1,7 @@
-	<core:FragmentDefinition  	xmlns:mvc="sap.ui.core.mvc"
+<core:FragmentDefinition xmlns:mvc="sap.ui.core.mvc"
 		xmlns="sap.m"
 		xmlns:upload="sap.m.upload" xmlns:core="sap.ui.core">
-    
+     
  <upload:UploadSet
 				
 				instantUpload="true"
@@ -13,7 +13,7 @@
 				maxFileSize="200"
 				mediaTypes="text/plain,application/msword,image/png"
 				uploadUrl="../../../../upload"
-				items="{path: 'uploadModel>/items', templateShareable: false}"
+				items=""
 				mode="MultiSelect"
 				selectionChanged="onSelectionChange">
 			<upload:toolbar>
@@ -37,31 +37,19 @@
 			</upload:toolbar>
 			<upload:items>
 				<upload:UploadSetItem
-						fileName="{uploadModel>fileName}"
-						mediaType="{uploadModel>mediaType}"
-						url="{uploadModel>url}"
-						thumbnailUrl="{uploadModel>thumbnailUrl}"
-						markers="{path: 'uploadModel>markers', templateShareable: false}"
-						statuses="{path: 'uploadModel>statuses', templateShareable: false}"
-						uploadState="{uploadModel>uploadState}">
-					<upload:markers>
-						<ObjectMarker
-								type="{uploadModel>type}"
-								visibility="{uploadModel>visibility}"/>
-					</upload:markers>
+						fileName="Company Estimate Reference Sheet"
+						mediaType="application/msword"
+						url="demokit/sample/UploadCollection/LinkedDocuments/Business Plan Agenda.doc"
+						>
+					
 					<upload:statuses>
 						<ObjectStatus
-								title="{uploadModel>title}"
-								text="{uploadModel>text}"
-								state="{uploadModel>state}"
-								icon="{uploadModel>icon}"
-								active="{uploadModel>active}"/>
+								title="Uploaded By"
+								text="Jane Burns"
+							
+								active="true"/>
 					</upload:statuses>
 				</upload:UploadSetItem>
 			</upload:items>
 		</upload:UploadSet>
-
-
-		
-    </core:FragmentDefinition>
-   
+</core:FragmentDefinition>

@@ -69,20 +69,23 @@
                     </ObjectPageSubSection>
                 </subSections>
             </ObjectPageSection>
-            <ObjectPageSection title="CHAL">
+
+             <ObjectPageSection title="Company Estimation Reference Sheet">
                 <subSections>
                     <ObjectPageSubSection>
-                        <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.CHAL" type="XML" />
+                        <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.CompanyEstimationRef" type="XML" />
                     </ObjectPageSubSection>
                 </subSections>
             </ObjectPageSection>
-            <ObjectPageSection title="COAL">
+          
+           <ObjectPageSection title="Long List Details">
                 <subSections>
                     <ObjectPageSubSection>
-                        <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.COAL" type="XML" />
+                        <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.LongListDetails" type="XML" />
                     </ObjectPageSubSection>
                 </subSections>
             </ObjectPageSection>
+          
         </sections>
         <footer>
 			<m:OverflowToolbar>

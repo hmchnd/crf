@@ -46,6 +46,22 @@
                     </ObjectPageSubSection>
                 </subSections>
             </ObjectPageSection>
+
+               <ObjectPageSection title="COAL">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.COAL" type="XML" />
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+
+               <ObjectPageSection title="CHAL">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.CHAL" type="XML" />
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
             <ObjectPageSection title="Company Estimation">
                 <subSections>
                     <ObjectPageSubSection>
@@ -53,13 +69,22 @@
                     </ObjectPageSubSection>
                 </subSections>
             </ObjectPageSection>
+
+             <ObjectPageSection title="Company Estimation Reference Sheet">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.CompanyEstimationRef" type="XML" />
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+          
         </sections>
         <footer>
 			<m:OverflowToolbar>
 				<m:ToolbarSpacer />
-				<m:Button type="Submit for approval" text="Accept"/>
+				<m:Button type="Emphasized" text="Submit for approval"/>
                 <m:Button  text="Save" press="onSave" />
-                <m:Button text="Cancel/Clear" />
+                <m:Button text="Clear" />
 			</m:OverflowToolbar>
 		</footer>
         
