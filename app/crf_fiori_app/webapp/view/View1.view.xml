@@ -78,7 +78,7 @@
                 </subSections>
             </ObjectPageSection>
           
-           <ObjectPageSection title="Long List Details">
+           <ObjectPageSection title="Long List Request Details">
                 <subSections>
                     <ObjectPageSubSection>
                         <core:Fragment fragmentName="ncoc.eprocurement.crffioriapp.view.fragments.LongListDetails" type="XML" />
