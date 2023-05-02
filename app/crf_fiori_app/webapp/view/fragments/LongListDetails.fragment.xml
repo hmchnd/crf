@@ -5,7 +5,7 @@
 <Label text="Additional Notes (Selection Criteria)" />
 <TextArea width="100%" height="100%" />
 
-<Label text="Contract Engineer" />
+<Label text="Predecessor Long List Request No" />
 <Input  />
  <upload:UploadSet
 				
@@ -42,7 +42,7 @@
 			</upload:toolbar>
 			<upload:items>
 				<upload:UploadSetItem
-						fileName="Long List Scope of work"
+						fileName="Market Research results"
 						mediaType="application/msword"
 						url="demokit/sample/UploadCollection/LinkedDocuments/Business Plan Agenda.doc"
 						>

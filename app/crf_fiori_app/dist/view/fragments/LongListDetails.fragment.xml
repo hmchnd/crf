@@ -1,8 +1,12 @@
-	<core:FragmentDefinition  	xmlns:mvc="sap.ui.core.mvc"
+<core:FragmentDefinition xmlns:mvc="sap.ui.core.mvc"
 		xmlns="sap.m"
-	 xmlns:core="sap.ui.core"  xmlns:upload="sap.m.upload">
+		xmlns:upload="sap.m.upload" xmlns:core="sap.ui.core">
+ <VBox>    
+<Label text="Additional Notes (Selection Criteria)" />
+<TextArea width="100%" height="100%" />
 
-   
+<Label text="Contract Engineer" />
+<Input  />
  <upload:UploadSet
 				
 				instantUpload="true"
@@ -20,15 +24,27 @@
 			<upload:toolbar>
 				<OverflowToolbar>
 					<ToolbarSpacer/>
-					
+					<!-- <Button
+							id="uploadSelectedButton"
+							text="Upload selected"
+							press="onUploadSelectedButton"/>
+					<Button
+							id="downloadSelectedButton"
+							text="Download selected"
+							press="onDownloadSelectedButton"/>
+					<Button
+							id="versionButton"
+							enabled="false"
+							text="Upload a new version"
+							press="onVersionUpload"/> -->
 					<upload:UploadSetToolbarPlaceholder />
 				</OverflowToolbar>
 			</upload:toolbar>
 			<upload:items>
 				<upload:UploadSetItem
-						fileName="Contract Holder Appointment Letter"
+						fileName="Long List Scope of work"
 						mediaType="application/msword"
-						url="demokit/sample/UploadCollection/LinkedDocuments/CHAL.doc"
+						url="demokit/sample/UploadCollection/LinkedDocuments/Business Plan Agenda.doc"
 						>
 					
 					<upload:statuses>
@@ -42,5 +58,5 @@
 			</upload:items>
 		</upload:UploadSet>
 
-       </core:FragmentDefinition>
-
+         </VBox>  
+</core:FragmentDefinition>
